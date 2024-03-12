@@ -4,7 +4,7 @@ import whisper
 
 models = ["base", "small", "medium", "large"]
 
-model = whisper.load_model(models[0])
+model = whisper.load_model(models[1])
 recognizer = sr.Recognizer()
 
 def transcribe(model, audio_file):

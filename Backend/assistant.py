@@ -6,7 +6,7 @@ import os
 from googlesearch import search
 import google.generativeai as genai
 # from langchain_google_genai import GoogleGenerativeAI
-# from asr import asr
+from asr2 import asr
 # from tts import tts
 from dotenv import load_dotenv
 load_dotenv()
@@ -66,8 +66,8 @@ def search_on_google(text):
 
     print("Would you like me to show you the results on web? (yes/no)")
     tts("Would you like me to show you the results on web?")
-    # show = asr()
-    show = input()
+    show = asr()
+    # show = input()
     print("User : ", show)
     if "yes" in show.lower():
         browse(top_result[0].url)
@@ -79,9 +79,9 @@ def search_on_google(text):
 def main():
     try:
         while True:
-        #   user_input = asr()
-          user_input = input("User : ")
-        #   print("User : ", user_input)
+          user_input = asr()
+        #   user_input = input("User : ")
+          print("User : ", user_input)
 
           if "stop" in user_input.lower() or "exit" in user_input.lower():
               break
